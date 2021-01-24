@@ -1,0 +1,152 @@
+body {
+  font-family: 'Circular Std', sans-serif;
+  background-color: #fff;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin breakpoint($point) {
+  @if $point==desktop_big {
+    @media (max-width: 118.750em) {
+      @content ;
+    }
+  }
+
+  @else if $point==4k {
+    @media (max-width:100em) {
+      @content ;
+    }
+  }
+
+  @else if $point==desktop_med {
+    @media (max-width: 106.250em) {
+      @content ;
+    }
+  }
+
+  @else if $point==desktop_sml {
+    @media (max-width: 100em) {
+      @content ;
+    }
+  }
+
+  @else if $point==sml-screen {
+    @media (max-width: 84.375em) {
+      @content ;
+    }
+  }
+
+  @else if $point==desktop {
+    @media (max-width: 80em) {
+      @content ;
+    }
+  }
+
+  @else if $point==laptop {
+    @media (max-width: 75em) {
+      @content ;
+    }
+  }
+
+  @else if $point==ipad {
+    @media (max-width: 62em) {
+      @content ;
+    }
+  }
+
+  @else if $point==tab_normal {
+    @media (max-width: 50em) {
+      @content ;
+    }
+  }
+
+
+
+  @else if $point==tablet {
+    @media (max-width: 48em) {
+      @content ;
+    }
+  }
+
+  @else if $point==tab_sml {
+    @media (max-width: 42.5em) {
+      @content ;
+    }
+  }
+
+  @else if $point==phablet {
+    @media (max-width: 37.5em) {
+      @content ;
+    }
+  }
+
+  @else if $point==mobileonly {
+    @media (max-width: 31.25em) {
+      @content ;
+    }
+  }
+
+  @else if $point==iphone {
+    @media (max-width:26.25em) {
+      @content ;
+    }
+  }
+
+  @else if $point==iphoneplus {
+    @media (max-width:25.875em) {
+      @content ;
+    }
+  }
+
+  @else if $point==small {
+    @media (max-width:23.75em) {
+      @content ;
+    }
+  }
+
+  @else if $point==iphonex {
+    @media (max-width:23.438em) {
+      @content ;
+    }
+  }
+
+  @else if $point==vsmll {
+    @media (max-width:22.5em) {
+      @content ;
+    }
+  }
+}
